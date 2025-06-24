@@ -6,7 +6,7 @@ export interface IEffectRenderer {
     width: number,
     height: number,
     mousePosition?: { x: number; y: number }
-  ): void;
+  ): void
 
   renderHoverEffect(
     ctx: CanvasRenderingContext2D,
@@ -14,7 +14,7 @@ export interface IEffectRenderer {
     y: number,
     width: number,
     height: number
-  ): void;
+  ): void
 
   renderMatchEffect(
     ctx: CanvasRenderingContext2D,
@@ -22,5 +22,5 @@ export interface IEffectRenderer {
     y: number,
     width: number,
     height: number
-  ): void;
+  ): void
 }

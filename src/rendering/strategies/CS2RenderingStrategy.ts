@@ -1,7 +1,7 @@
-import type { 
-  IRenderingStrategy, 
-  RenderingConfig, 
-  CanvasDimensions 
+import type {
+  IRenderingStrategy,
+  RenderingConfig,
+  CanvasDimensions,
 } from '@/rendering/interfaces/IRenderingStrategy'
 import type { Tile } from '@/types/Tile'
 import { TileRenderer } from '@/rendering/renderers/TileRenderer'
@@ -11,46 +11,48 @@ export class CS2RenderingStrategy implements IRenderingStrategy {
   private tileRenderer = new TileRenderer()
   private effectRenderer = new EffectRenderer()
 
-  render(
-    ctx: CanvasRenderingContext2D,
-    tiles: Tile[],
-    config: RenderingConfig
-  ): void {
-    // Czyścimy canvas
+  render(ctx: CanvasRenderingContext2D, tiles: Tile[], config: RenderingConfig): void {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 
-    // Renderujemy tło planszy
     this.renderBackground(ctx, config)
 
-    // Renderujemy kafelki
     tiles.forEach((tile, index) => {
       const position = this.calculateTilePosition(index, config)
       const isHovered = config.hoveredIndex === index
 
       ctx.save()
 
-      // Efekty przed renderowaniem kafelka
       if (isHovered) {
-        this.effectRenderer.renderHoverEffect(ctx, position.x, position.y, position.width, position.height)
+        this.effectRenderer.renderHoverEffect(
+          ctx,
+          position.x,
+          position.y,
+          position.width,
+          position.height
+        )
       }
 
       if (tile.isMatched) {
-        this.effectRenderer.renderMatchEffect(ctx, position.x, position.y, position.width, position.height)
+        this.effectRenderer.renderMatchEffect(
+          ctx,
+          position.x,
+          position.y,
+          position.width,
+          position.height
+        )
       }
 
-      // Efekt paralaksy
       if (config.mousePosition && isHovered) {
         this.effectRenderer.renderParallaxEffect(
-          ctx, 
-          position.x, 
-          position.y, 
-          position.width, 
-          position.height, 
+          ctx,
+          position.x,
+          position.y,
+          position.width,
+          position.height,
           config.mousePosition
         )
       }
 
-      // Renderujemy kafelek
       this.tileRenderer.renderTile(ctx, tile, position, config, isHovered)
 
       ctx.restore()
@@ -87,7 +89,6 @@ export class CS2RenderingStrategy implements IRenderingStrategy {
   }
 
   private renderBackground(ctx: CanvasRenderingContext2D, config: RenderingConfig): void {
-    // Gradient tła w stylu CS2
     const gradient = ctx.createLinearGradient(0, 0, ctx.canvas.width, ctx.canvas.height)
     gradient.addColorStop(0, '#1a1a1a')
     gradient.addColorStop(1, '#2d2d2d')
@@ -104,7 +105,7 @@ export class CS2RenderingStrategy implements IRenderingStrategy {
       x: col * (config.tileSize + config.tileGap),
       y: row * (config.tileSize + config.tileGap),
       width: config.tileSize,
-      height: config.tileSize
+      height: config.tileSize,
     }
   }
 }

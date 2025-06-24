@@ -1,11 +1,11 @@
-import type { Tile } from "@/types/Tile";
-import type { RenderingConfig } from "./IRenderingStrategy";
+import type { Tile } from '@/types/Tile'
+import type { RenderingConfig } from './IRenderingStrategy'
 
 export interface TilePosition {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
+  x: number
+  y: number
+  width: number
+  height: number
 }
 
 export interface ITileRenderer {
@@ -15,5 +15,5 @@ export interface ITileRenderer {
     position: TilePosition,
     config: RenderingConfig,
     isHovered: boolean
-  ): void;
+  ): void
 }
