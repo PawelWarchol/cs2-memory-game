@@ -1,0 +1,122 @@
+@use 'sass:color';
+
+.game-history {
+  max-width: 500px;
+
+  &__title {
+    color: $cs2-orange;
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-xl;
+  }
+
+  &__empty {
+    text-align: center;
+    color: $cs2-text-secondary;
+    padding: $spacing-xl;
+    font-style: italic;
+  }
+
+  &__list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: $spacing-sm;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba($cs2-border, 0.2);
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $cs2-orange;
+      border-radius: 3px;
+    }
+  }
+
+  &__item {
+    background: rgba($cs2-medium-bg, 0.8);
+    border: 1px solid rgba($cs2-border, 0.3);
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__difficulty {
+    font-weight: 600;
+    color: $cs2-orange;
+    font-size: $font-size-md;
+  }
+
+  &__date {
+    color: $cs2-text-secondary;
+    font-size: $font-size-sm;
+  }
+
+  &__item-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: $spacing-sm;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__stat-label {
+    color: $cs2-text-secondary;
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__stat-value {
+    color: $cs2-text;
+    font-weight: 600;
+    font-size: $font-size-sm;
+  }
+
+  &__seed {
+    font-family: monospace;
+    background: rgba($cs2-dark-bg, 0.5);
+    padding: $spacing-xs;
+    border-radius: $border-radius-sm;
+    word-break: break-all;
+  }
+
+  &__actions {
+    margin-top: $spacing-lg;
+    text-align: center;
+  }
+}
+
+.btn--danger {
+  background: linear-gradient(135deg, #dc3545, color.adjust(#dc3545, $lightness: -10%));
+  color: white;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(#dc3545, 0.3);
+  }
+}
+
+.btn--small {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+}

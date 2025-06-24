@@ -1,0 +1,64 @@
+@use 'sass:color';
+
+.seed-input {
+  &__label {
+    display: block;
+    color: $cs2-text;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-md;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__field {
+    width: 100%;
+    background: rgba($cs2-medium-bg, 0.8);
+    border: 2px solid $cs2-border;
+    border-radius: $border-radius-md;
+    padding: $spacing-md;
+    color: $cs2-text;
+    font-size: $font-size-md;
+    transition: border-color $transition-normal;
+
+    &::placeholder {
+      color: $cs2-text-secondary;
+    }
+
+    &:focus {
+      border-color: $cs2-orange;
+      outline: none;
+    }
+
+    &:hover {
+      border-color: color.adjust($cs2-border, $lightness: 10%);
+    }
+  }
+
+  &__generate {
+    position: absolute;
+    right: $spacing-sm;
+    background: transparent;
+    border: none;
+    font-size: $font-size-lg;
+    cursor: pointer;
+    padding: $spacing-xs;
+    border-radius: $border-radius-sm;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background: rgba($cs2-orange, 0.1);
+    }
+  }
+
+  &__help {
+    margin-top: $spacing-sm;
+    color: $cs2-text-secondary;
+    font-size: $font-size-sm;
+    line-height: 1.4;
+  }
+}
