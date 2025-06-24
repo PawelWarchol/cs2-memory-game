@@ -1,5 +1,6 @@
 import { vi } from 'vitest'
 
+// Mock localStorage
 const localStorageMock = {
   getItem: vi.fn(),
   setItem: vi.fn(),
@@ -8,6 +9,7 @@ const localStorageMock = {
 }
 global.localStorage = localStorageMock
 
+// Mock Canvas API
 const mockContext = {
   fillRect: vi.fn(),
   clearRect: vi.fn(),
@@ -30,10 +32,10 @@ const mockContext = {
   arc: vi.fn(),
   measureText: vi.fn(() => ({ width: 0 })),
   createLinearGradient: vi.fn(() => ({
-    addColorStop: vi.fn(),
+    addColorStop: vi.fn()
   })),
   createRadialGradient: vi.fn(() => ({
-    addColorStop: vi.fn(),
+    addColorStop: vi.fn()
   })),
   quadraticCurveTo: vi.fn(),
   lineTo: vi.fn(),
@@ -46,32 +48,34 @@ const mockContext = {
   shadowColor: 'rgba(0, 0, 0, 0)',
   shadowBlur: 0,
   shadowOffsetX: 0,
-  shadowOffsetY: 0,
+  shadowOffsetY: 0
 }
 
 global.HTMLCanvasElement.prototype.getContext = vi.fn(() => mockContext) as any
 
+// Mock Web Audio API
 const mockAudioContext = {
   createOscillator: vi.fn(() => ({
     connect: vi.fn(),
     start: vi.fn(),
     stop: vi.fn(),
     frequency: { setValueAtTime: vi.fn() },
-    type: 'sine',
+    type: 'sine'
   })),
   createGain: vi.fn(() => ({
     connect: vi.fn(),
-    gain: {
+    gain: { 
       setValueAtTime: vi.fn(),
-      exponentialRampToValueAtTime: vi.fn(),
-    },
+      exponentialRampToValueAtTime: vi.fn()
+    }
   })),
   destination: {},
-  currentTime: 0,
+  currentTime: 0
 }
 
 global.AudioContext = vi.fn(() => mockContext) as any
 
+// Mock Image
 global.Image = class {
   onload: (() => void) | null = null
   src = ''
@@ -83,10 +87,11 @@ global.Image = class {
   }
 } as any
 
+// Mock window methods
 Object.defineProperty(window, 'confirm', {
-  value: vi.fn(() => true),
+  value: vi.fn(() => true)
 })
 
 Object.defineProperty(window, 'alert', {
-  value: vi.fn(),
+  value: vi.fn()
 })
