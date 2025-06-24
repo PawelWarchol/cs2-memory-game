@@ -1,0 +1,52 @@
+// CS2 Color Palette
+$cs2-orange: #FF6600;
+$cs2-gold: #FFD700;
+$cs2-dark-bg: #1a1a1a;
+$cs2-medium-bg: #2a2a2a;
+$cs2-light-bg: #3a3a3a;
+$cs2-text: #ffffff;
+$cs2-text-secondary: #cccccc;
+$cs2-border: #444444;
+$cs2-hover: #555555;
+
+// Rarity Colors
+$rarity-consumer: #B0C3D9;
+$rarity-industrial: #5E98D9;
+$rarity-mil-spec: #4B69FF;
+$rarity-restricted: #8847FF;
+$rarity-classified: #D32CE6;
+$rarity-covert: #EB4B4B;
+$rarity-extraordinary: #E4AE39;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Typography
+$font-family-primary: 'Rajdhani', Arial, sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
+
+// Z-index
+$z-index-modal: 1000;
+$z-index-dropdown: 100;
+$z-index-tooltip: 50;
