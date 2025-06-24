@@ -1,45 +1,46 @@
 # CS2 Memory Game
 
-This template should help get you started developing with Vue 3 in Vite.
+Profesjonalna gra memory inspirowana Counter-Strike 2, zbudowana w Vue 3 z TypeScript, wykorzystująca Canvas API do renderowania planszy gry.
 
-## Recommended IDE Setup
+## 🎮 Funkcjonalności
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Renderowanie Canvas**: Plansza gry renderowana w pełni na HTML5 Canvas
+- **Trzy Poziomy Trudności**: Łatwy (6 par), Średni (8 par), Trudny (12 par)
+- **System Seed-ów**: Powtarzalne układy kafelków
+- **Efekty Dźwiękowe**: Web Audio API dla immersji
+- **Historia Gier**: Lokalne przechowywanie wyników
 
-## Type Support for `.vue` Imports in TS
+## 🛠️ Technologie
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Vue 3** - Framework frontendowy z Composition API
+- **TypeScript** - Statyczne typowanie
+- **Vite** - Bundler i serwer deweloperski
+- **SCSS** - Preprocesor CSS z metodologią BEM
+- **Vitest** - Framework testowy
+- **HTML5 Canvas** - Renderowanie planszy gry
 
-## Customize configuration
+````
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🚀 Instalacja i Uruchomienie
 
-## Project Setup
+### Wymagania
 
-```sh
+- Node.js 18+
+- npm lub yarn
+
+### Kroki Instalacji
+
+```bash
+
+# Instalacja zależności
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Uruchomienie serwera deweloperskiego
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# Budowanie do produkcji
 npm run build
-```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+# Uruchomienie testów
+npm run test
+````
