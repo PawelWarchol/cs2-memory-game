@@ -30,7 +30,6 @@ export class EffectRenderer implements IEffectRenderer {
     height: number
   ): void {
     ctx.shadowColor = '#FFD700'
-    ctx.shadowBlur = 10
     ctx.shadowOffsetX = 0
     ctx.shadowOffsetY = 0
   }
@@ -43,7 +42,6 @@ export class EffectRenderer implements IEffectRenderer {
     height: number
   ): void {
     ctx.shadowColor = '#00ff00'
-    ctx.shadowBlur = 15
     ctx.shadowOffsetX = 0
     ctx.shadowOffsetY = 0
 
