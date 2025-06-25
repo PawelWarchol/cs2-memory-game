@@ -8,6 +8,8 @@
       @click="handleCanvasClick"
       @mousemove="handleMouseMove"
       @mouseleave="handleMouseLeave"
+      @touchstart="handleCanvasTouch"
+      @touchend="handleCanvasTouch"
     />
   </div>
 </template>
@@ -88,6 +90,24 @@ function handleMouseMove(event: MouseEvent) {
 function handleMouseLeave() {
   hoveredIndex.value = null
   mousePosition.value = undefined
+}
+
+function handleCanvasTouch(event: TouchEvent) {
+  event.preventDefault()
+
+  const touch = event.touches[0] || event.changedTouches[0]
+  if (!touch || !canvasRef.value) return
+
+  const rect = canvasRef.value.getBoundingClientRect()
+  const scaleX = canvasRef.value.width / rect.width
+  const scaleY = canvasRef.value.height / rect.height
+  const x = (touch.clientX - rect.left) * scaleX
+  const y = (touch.clientY - rect.top) * scaleY
+
+  const result = renderingContext.handleClick(x, y, props.tiles, renderingConfig.value)
+  if (result) {
+    props.onTileClick(result.tile, result.index)
+  }
 }
 </script>
 

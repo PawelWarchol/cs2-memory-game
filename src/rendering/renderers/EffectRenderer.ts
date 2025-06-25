@@ -19,7 +19,6 @@ export class EffectRenderer implements IEffectRenderer {
 
     ctx.save()
     ctx.translate(offsetX, offsetY)
-    // Dodatkowe efekty paralaksy mogą być tutaj implementowane
     ctx.restore()
   }
 
@@ -30,7 +29,6 @@ export class EffectRenderer implements IEffectRenderer {
     width: number,
     height: number
   ): void {
-    // Subtelny efekt świecenia
     ctx.shadowColor = '#FFD700'
     ctx.shadowBlur = 10
     ctx.shadowOffsetX = 0
@@ -44,13 +42,11 @@ export class EffectRenderer implements IEffectRenderer {
     width: number,
     height: number
   ): void {
-    // Efekt dla dopasowanych kafelków
     ctx.shadowColor = '#00ff00'
     ctx.shadowBlur = 15
     ctx.shadowOffsetX = 0
     ctx.shadowOffsetY = 0
 
-    // Dodatkowy blask
     const centerX = x + width / 2
     const centerY = y + height / 2
     const radius = Math.max(width, height) * 0.6
