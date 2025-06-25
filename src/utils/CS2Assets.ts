@@ -40,7 +40,7 @@ export const weapons: Weapon[] = [
   {
     id: 'knife',
     name: 'Karambit',
-    image: '/assets/weapons/karambit.png',
+    image: '/assets/weapons/knife.png',
     rarity: 'Extraordinary',
   },
   {
